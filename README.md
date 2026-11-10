@@ -1,10 +1,9 @@
-# Auto-forward email to WhatsApp
+# Email Notifications for Android
 
 ## Android app
 
-The `app/` directory is a native Android version. It has no Twilio or WhatsApp
-dependency: it polls IMAP in a foreground service and shows a high-priority
-Android notification for each unread email.
+The `app/` directory is a native Android app that polls IMAP in a foreground
+service and shows a high-priority Android notification for each unread email.
 
 Open the project in Android Studio, build it, install it, and exempt it from
 battery optimization. Gmail users should use an App Password and enable IMAP.

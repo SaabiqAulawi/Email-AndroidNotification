@@ -10,7 +10,7 @@
         android:padding="16dp">
 
         <TextView
-            android:text="Email to WhatsApp"
+            android:text="Email Notifications"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_width="match_parent"

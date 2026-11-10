@@ -8,7 +8,7 @@
 
     <application 
         android:theme="@style/AppTheme" 
-        android:label="Email to WhatsApp">
+        android:label="Email Notifications">
         
         <activity 
             android:name=".MainActivity" 

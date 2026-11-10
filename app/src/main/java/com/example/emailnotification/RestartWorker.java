@@ -1,4 +1,4 @@
-package com.example.emailtowhatsapp;
+package com.example.emailnotification;
 
 import android.content.Context;
 import android.content.Intent;
