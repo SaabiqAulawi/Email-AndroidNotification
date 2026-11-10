@@ -52,7 +52,7 @@ public class ForwardService extends Service {
         SharedPreferences p = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
         String host = p.getString("host", "");
         String user = p.getString("username", "");
-        String pass = p.getString("password", "");
+        String pass = SecureSettings.getPassword(context);
         if (host.isEmpty() || user.isEmpty() || pass.isEmpty()) return;
         try {
             Properties props = new Properties();

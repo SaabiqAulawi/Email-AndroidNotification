@@ -29,7 +29,7 @@ public class BootReceiver extends BroadcastReceiver {
         SharedPreferences prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
         boolean isMonitoring = prefs.getBoolean("is_monitoring", false);
         String user = prefs.getString("username", "");
-        String pass = prefs.getString("password", "");
+        String pass = SecureSettings.getPassword(context);
 
         // Only auto-start if the user previously enabled monitoring and has configured credentials
         if (isMonitoring && !user.isEmpty() && !pass.isEmpty()) {

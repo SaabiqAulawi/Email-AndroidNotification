@@ -36,7 +36,7 @@ public class RestartWorker extends Worker {
         SharedPreferences prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
         boolean isMonitoring = prefs.getBoolean("is_monitoring", false);
         String user = prefs.getString("username", "");
-        String pass = prefs.getString("password", "");
+        String pass = SecureSettings.getPassword(context);
 
         // Only do work if monitoring is active and credentials are configured
         if (!isMonitoring || user.isEmpty() || pass.isEmpty()) {

@@ -2,15 +2,15 @@
 
 ## Android app
 
-The `app/` directory is a native Android app that polls IMAP in a foreground
-service and shows a high-priority Android notification for each unread email.
+The `app/` directory is a native Android app built with Kotlin, Jetpack
+Compose, and Material 3. It polls IMAP in a foreground service and shows a
+high-priority Android notification for each unread email.
 
 Open the project in Android Studio, build it, install it, and exempt it from
 battery optimization. Gmail users should use an App Password and enable IMAP.
-Open the project root (the folder containing `settings.gradle`), not the
-`app/src/main/java` folder. Android Studio must complete **Sync Project with
-Gradle Files** before Java files under `app/src/main/java` are opened; otherwise
-the editor can report missing mandatory classpath entries.
+Open the project root (the folder containing `settings.gradle`), not a source
+folder. Android Studio must complete **Sync Project with Gradle Files** before
+the app is opened.
 
 ## Background Reliability & Resilience
 
@@ -40,3 +40,6 @@ The app includes three mechanisms to ensure continuous 24/7 background operation
 The foreground service checks every 60 seconds. When it finds an unread
 message, it posts a high-priority notification containing the sender, subject,
 and body. The email is marked read after the notification is posted.
+
+The IMAP password is stored using Android Keystore-backed encrypted
+preferences. Do not commit credentials or `local.properties`.
